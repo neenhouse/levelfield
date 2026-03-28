@@ -1,0 +1,81 @@
+.complaint-page {
+  padding: var(--space-7) 0 var(--space-9);
+}
+
+.complaint-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.complaint-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.form-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.form-section h3 {
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.form-section .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-section label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Output */
+.complaint-output {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.complaint-output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.complaint-letter {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text-bright);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .complaint-letter {
+    padding: var(--space-4);
+    font-size: 0.75rem;
+  }
+}

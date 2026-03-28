@@ -1,0 +1,121 @@
+.cases-page {
+  padding: var(--space-7) 0 var(--space-9);
+}
+
+.cases-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+.case-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.case-stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.case-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.cases-section {
+  margin-bottom: var(--space-7);
+}
+.cases-section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.cases-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: all 0.2s;
+}
+.case-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.case-card--resolved {
+  opacity: 0.85;
+}
+
+.case-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.case-card-id {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.case-card h3 {
+  margin-bottom: var(--space-4);
+  font-size: 1.05rem;
+}
+
+.case-card-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2) var(--space-4);
+}
+
+.case-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 0.875rem;
+  color: var(--text-bright);
+}
+
+.detail-value--gold {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .cases-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cases-list {
+    grid-template-columns: 1fr;
+  }
+}

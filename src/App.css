@@ -1,0 +1,10 @@
+/* App-level styles - minimal since pages handle their own */
+main {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 60px; /* Account for fixed bottom nav */
+  }
+}
