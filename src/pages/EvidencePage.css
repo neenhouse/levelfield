@@ -142,12 +142,12 @@ textarea {
   font-size: 0.875rem;
   color: var(--text);
   padding: var(--space-3) var(--space-4);
-  background: var(--bg);
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--gold);
+  background: rgba(217, 119, 6, 0.05);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-left: 3px solid var(--gold-light);
 }
 .evidence-impact strong {
-  color: var(--text-bright);
+  color: var(--gold-light);
 }
 
 @media (max-width: 768px) {

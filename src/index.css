@@ -1,23 +1,23 @@
 :root {
   /* Steel blue + Justice gold palette */
   --steel: #3B82F6;
-  --steel-light: #60A5FA;
-  --steel-dark: #1D4ED8;
+  --steel-light: #93C5FD;
+  --steel-dark: #2563EB;
   --gold: #D97706;
-  --gold-light: #F59E0B;
+  --gold-light: #FCD34D;
   --gold-dark: #B45309;
 
   /* Semantic colors */
-  --bg: #0B0F1A;
-  --bg-card: #111827;
-  --bg-elevated: #1F2937;
-  --bg-input: #1a2236;
-  --border: #1F2937;
-  --border-hover: #374151;
-  --text: #9CA3AF;
-  --text-heading: #F9FAFB;
-  --text-muted: #6B7280;
-  --text-bright: #E5E7EB;
+  --bg: #080C16;
+  --bg-card: #0E1422;
+  --bg-elevated: #182034;
+  --bg-input: #111827;
+  --border: #1E2D45;
+  --border-hover: #2D4265;
+  --text: #A8B3C8;
+  --text-heading: #F0F4FF;
+  --text-muted: #5A6A82;
+  --text-bright: #D4DDEF;
 
   /* Status colors */
   --success: #10B981;
@@ -26,10 +26,10 @@
   --info: #3B82F6;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
-  --shadow-glow: 0 0 20px rgba(59,130,246,0.15);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 28px rgba(59,130,246,0.2), 0 0 60px rgba(59,130,246,0.06);
 
   /* Typography */
   --font-display: 'Space Grotesk', system-ui, sans-serif;

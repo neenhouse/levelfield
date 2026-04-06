@@ -35,7 +35,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--steel) 0%, var(--steel-light) 50%, var(--gold-light) 100%);
+  background: linear-gradient(120deg, var(--steel-light) 0%, #7DD3FC 40%, var(--gold-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,13 +62,14 @@
   justify-content: center;
   gap: var(--space-6);
   margin-top: var(--space-8);
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-5) var(--space-7);
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-hover);
   border-radius: var(--radius-xl);
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 .hero-stat {
@@ -83,6 +84,7 @@
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-heading);
+  letter-spacing: -0.03em;
 }
 
 .stat-label {
@@ -101,13 +103,13 @@
 
 .hero-glow {
   position: absolute;
-  top: -50%;
+  top: -40%;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
-  height: 800px;
+  width: 900px;
+  height: 900px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, rgba(147, 197, 253, 0.04) 40%, transparent 70%);
   pointer-events: none;
 }
 
@@ -129,36 +131,49 @@
 }
 
 .btn-primary {
-  background: var(--steel);
+  background: linear-gradient(135deg, var(--steel) 0%, var(--steel-dark) 100%);
   color: white;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.35), inset 0 1px 0 rgba(255,255,255,0.12);
 }
 .btn-primary:hover {
-  background: var(--steel-dark);
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #60A5FA 0%, var(--steel) 100%);
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.5), inset 0 1px 0 rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .btn-outline {
   border: 1px solid var(--border-hover);
   color: var(--text-bright);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
 }
 .btn-outline:hover {
-  border-color: var(--steel);
+  border-color: var(--steel-light);
   color: var(--steel-light);
-  background: rgba(59, 130, 246, 0.05);
+  background: rgba(59, 130, 246, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+}
+.btn-outline:active {
+  transform: translateY(0);
 }
 
 .btn-gold {
-  background: var(--gold);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: white;
-  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 2px 12px rgba(217, 119, 6, 0.35), inset 0 1px 0 rgba(255,255,255,0.12);
 }
 .btn-gold:hover {
-  background: var(--gold-dark);
-  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #F59E0B 0%, var(--gold) 100%);
+  box-shadow: 0 6px 24px rgba(217, 119, 6, 0.5), inset 0 1px 0 rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+.btn-gold:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
 }
 
 .btn-sm {
@@ -218,12 +233,12 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   text-align: center;
-  transition: all 0.3s;
+  transition: all 0.25s ease;
 }
 .pillar-card:hover {
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow), var(--shadow-md);
+  transform: translateY(-4px);
 }
 
 .pillar-icon {
@@ -292,24 +307,41 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  transition: all 0.3s;
+  transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
 }
+.violation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--steel) 0%, var(--gold) 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
 .violation-card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.violation-card:hover::before {
+  opacity: 1;
 }
 
 .violation-number {
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 700;
-  color: var(--border);
+  color: var(--border-hover);
   position: absolute;
   top: -4px;
   right: 12px;
   line-height: 1;
+  opacity: 0.6;
+  letter-spacing: -0.04em;
 }
 
 .violation-card h3 {

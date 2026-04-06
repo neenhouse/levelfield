@@ -90,10 +90,12 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 .member-card:hover {
   border-color: var(--border-hover);
+  background: var(--bg-elevated);
+  transform: translateX(2px);
 }
 
 .member-avatar {
