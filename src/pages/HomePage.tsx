@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import type { Page } from '../lib/types';
 import './HomePage.css';
 
@@ -6,10 +7,39 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
+  const heroImgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    let rafId: number;
+    const handleScroll = () => {
+      rafId = requestAnimationFrame(() => {
+        if (heroImgRef.current) {
+          const scrollY = window.scrollY;
+          heroImgRef.current.style.transform = `translateY(${scrollY * 0.18}px) scale(1.08)`;
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
   return (
     <div className="home">
       {/* Hero */}
       <section className="hero">
+        <div className="hero-og-parallax" aria-hidden="true">
+          <img
+            ref={heroImgRef}
+            src="/hero-og.webp"
+            alt=""
+            className="hero-og-parallax-img"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
         <div className="container hero-inner">
           <div className="hero-badge">Anti-Monopoly AI Toolkit</div>
           <h1 className="hero-title">
