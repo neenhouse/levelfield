@@ -7,7 +7,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const heroImgRef = useRef<HTMLImageElement>(null);
+  const heroImgRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     let rafId: number;
@@ -31,14 +31,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Hero */}
       <section className="hero">
         <div className="hero-og-parallax" aria-hidden="true">
-          <img
-            ref={heroImgRef}
-            src="/hero-og.webp"
-            alt=""
-            className="hero-og-parallax-img"
-            loading="eager"
-            decoding="async"
-          />
+          <video ref={heroImgRef} autoPlay muted loop playsInline poster="/hero-og.webp" className="hero-og-parallax-img">
+            <source src="/hero-og.webm" type="video/webm" />
+            <source src="/hero-og.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="container hero-inner">
           <div className="hero-badge">Anti-Monopoly AI Toolkit</div>
