@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { VIOLATION_TYPES, PLATFORM_DATA } from '../lib/data';
 import { saveEvidence, getEvidence, deleteEvidence } from '../lib/storage';
 import type { EvidenceItem } from '../lib/types';
@@ -6,7 +6,7 @@ import { StatusBadge } from '../components/StatusBadge';
 import './EvidencePage.css';
 
 export function EvidencePage() {
-  const [items, setItems] = useState<EvidenceItem[]>([]);
+  const [items, setItems] = useState<EvidenceItem[]>(() => getEvidence());
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({
     platform: '',
@@ -16,10 +16,6 @@ export function EvidencePage() {
     date: new Date().toISOString().split('T')[0],
     impact: '',
   });
-
-  useEffect(() => {
-    setItems(getEvidence());
-  }, []);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
