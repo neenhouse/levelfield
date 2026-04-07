@@ -2,7 +2,6 @@ import './StatusBadge.css';
 
 interface StatusBadgeProps {
   status: string;
-  variant?: 'default' | 'severity';
 }
 
 const STATUS_CONFIG: Record<string, { color: string; bg: string }> = {
